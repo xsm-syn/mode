@@ -1,0 +1,28 @@
+name = "mode"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-05-23"
+minify = true
+workers_dev = true
+routes = [
+  { pattern = "2359.biz.id", custom_domain = true },
+  { pattern = "ava.game.naver.com.2359.biz.id", custom_domain = true },
+  { pattern = "df.game.naver.com.2359.biz.id", custom_domain = true },
+  { pattern = "graph.instagram.com.2359.biz.id", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.2359.biz.id", custom_domain = true },
+  { pattern = "support.zoom.us.2359.biz.id", custom_domain = true },  
+  { pattern = "cache.netflix.com.2359.biz.id", custom_domain = true },
+]
+
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[env.dev]
+build = { command = "cargo install -q worker-build && worker-build --dev" }
+
+[vars]
+UUID = "abfdaae3-8a72-42ad-b671-fa2d5ecb9867"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/xsm-syn/mode/refs/heads/main/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/xsm-syn/mode/refs/heads/main/web/sub.html"
+COSTUM_PAGE_URL = "https://raw.githubusercontent.com/xsm-syn/mode/refs/heads/main/web/costum.html"
+

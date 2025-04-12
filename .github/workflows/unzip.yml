@@ -1,0 +1,25 @@
+name: Extract ZIP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Unzip Files
+        run: unzip master.zip -d ./
+
+      - name: Remove ZIP File
+        run: rm master.zip
+
+      - name: Commit Extracted Files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Extracted ZIP file"
+          git push
