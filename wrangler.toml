@@ -13,7 +13,6 @@ routes = [
   { pattern = "cache.netflix.com.2359.biz.id", custom_domain = true },
 ]
 
-
 [build]
 command = "cargo install -q worker-build && worker-build --release"
 
